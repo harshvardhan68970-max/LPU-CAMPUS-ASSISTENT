@@ -1,0 +1,333 @@
+/* 1. BASIC SETTINGS */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f4f8;
+}
+
+
+   /* 2. MAIN LOGIN CONTAINER */
+
+.login-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+ /* 3. LEFT SIDE DESIGN */
+
+
+.login-left {
+    width: 50%;
+    min-height: 100vh;
+    padding: 55px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: white;
+
+    background-image:
+        linear-gradient(
+            rgba(15, 32, 53, 0.88),
+            rgba(15, 32, 53, 0.65)
+        ),
+        url("campus-wide.png");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.login-left img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    margin-bottom: 35px;
+}
+
+.welcome-text {
+    color: #ffb547;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.login-left h1 {
+    font-size: 43px;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.description {
+    max-width: 420px;
+    color: #e0e7f0;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.features {
+    margin-top: 25px;
+}
+
+.features p {
+    color: #f1f5f9;
+    font-size: 14px;
+    margin: 15px 0;
+}
+
+
+   /* 4. RIGHT SIDE DESIGN */
+
+
+.login-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 5%;
+    background-color: #f4f7fb;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 410px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 13px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.login-box h2 {
+    color: #17283f;
+    font-size: 28px;
+    margin: 0 0 8px;
+}
+
+.login-subtitle {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+
+   /* 5. FORM DESIGN */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: #24344d;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dce5;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    background-color: white;
+    color: #24344d;
+}
+
+.form-group input:focus {
+    border-color: #f29b38;
+    box-shadow: 0 0 0 2px rgba(242, 155, 56, 0.12);
+}
+
+
+/* Password Box */
+
+.password-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d5dce5;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.password-box input {
+    border: none;
+    box-shadow: none;
+}
+
+.password-box input:focus {
+    box-shadow: none;
+}
+
+.show-password {
+    border: none;
+    background-color: transparent;
+    color: #e18b27;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.show-password:hover {
+    color: #ad6414;
+}
+
+
+   /* 6. FORGOT PASSWORD */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 17px;
+    font-size: 12px;
+}
+
+.form-options span {
+    color: #657184;
+}
+
+.form-options a {
+    color: #d97919;
+    text-decoration: none;
+}
+
+.form-options a:hover {
+    text-decoration: underline;
+}
+
+   /* 7. LOGIN BUTTON */
+
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: #17283f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background-color: #263f60;
+}
+
+   /* 8. ERROR AND SUCCESS MESSAGE */
+
+
+.login-message {
+    font-size: 13px;
+    margin: 0 0 13px;
+    line-height: 1.5;
+}
+
+.login-message.error {
+    color: #dc2626;
+}
+
+.login-message.success {
+    color: #15803d;
+}
+
+   /* 9. BOTTOM TEXT */
+.demo-note {
+    text-align: center;
+    color: #657184;
+    font-size: 12px;
+    margin-top: 23px;
+}
+
+.back-note {
+    text-align: center;
+    color: #8a96a8;
+    font-size: 12px;
+}
+
+
+
+   /* 10. TABLET DESIGN */
+
+@media (max-width: 850px) {
+
+    .login-container {
+        flex-direction: column;
+    }
+
+    .login-left {
+        width: 100%;
+        min-height: 320px;
+        padding: 35px 8%;
+    }
+
+    .login-left img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+
+    .login-left h1 {
+        font-size: 34px;
+    }
+
+    .features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    .features p {
+        margin: 5px 0;
+    }
+
+    .login-right {
+        width: 100%;
+        padding: 35px 5%;
+    }
+
+}
+
+   /* 11. MOBILE DESIGN */
+@media (max-width: 500px) {
+
+    .login-left {
+        min-height: 290px;
+        padding: 25px 7%;
+    }
+
+    .login-left h1 {
+        font-size: 29px;
+    }
+
+    .description {
+        font-size: 13px;
+    }
+
+    .features p {
+        font-size: 12px;
+    }
+
+    .login-right {
+        padding: 25px 5%;
+    }
+
+    .login-box {
+        padding: 25px 20px;
+    }
+
+    .login-box h2 {
+        font-size: 24px;
+    }
+
+}

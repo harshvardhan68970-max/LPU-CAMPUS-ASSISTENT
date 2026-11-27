@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LPU Student Campus Assistant</title>
+
+    <!-- Connect CSS File -->
+    <link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo-area">
+
+            <img src="lpu-logo.jpg" alt="LPU Logo">
+
+            <div>
+                <h2>LPU</h2>
+                <p>Student Campus Assistant</p>
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#campus-map">Campus Map</a>
+
+            <a href="#locations">Directory</a>
+
+            <a href="#exam-reminder">Exam Reminder</a>
+
+            <a href="#about">About</a>
+
+            <a href="#important-contacts">Important Contacts</a>
+
+            <a href="#events-notices">Events & Notices</a>
+
+            <!-- <a href="#new-student-guide">New Student Guide</a> -->
+
+        </div>
+
+
+        <!-- Dark and Light Mode Button -->
+        <button type="button" id="themeButton" class="theme-button">
+            🌙 Dark Mode
+        </button>
+
+    </nav>
+
+
+    <!-- Upcoming Exam Notification -->
+    <div class="exam-alert" id="examAlert" style="display: none;">
+
+        <span>🔔</span>
+
+        <span id="examAlertText">
+            You have an upcoming exam!
+        </span>
+
+        <a href="#exam-reminder">View Details</a>
+
+    </div>
+
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <p class="small-heading">
+                WELCOME TO LOVELY PROFESSIONAL UNIVERSITY
+            </p>
+
+            <h1>
+                Your Campus,<br>
+                Our Guide.
+            </h1>
+
+            <p>
+                New to campus or looking for a place?
+
+                Don't worry! We are here to help you
+                find your way around LPU.
+            </p>
+
+
+            <!-- Homepage Search -->
+            <form class="search-box" id="searchForm">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search library, hostel, medical centre..."
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+            </form>
+
+
+            <a href="#campus-map" class="main-button">
+                Explore Campus Map →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quick Access Section -->
+    <section class="quick-links">
+
+        <a href="#campus-map">📍 Campus Map</a>
+
+        <a href="#locations">🏢 Academic Blocks</a>
+
+        <a href="#locations">📚 Library</a>
+
+        <a href="#locations">✚ Medical Centre</a>
+
+        <a href="#locations">🏠 Hostels</a>
+
+        <a href="#exam-reminder">📝 Exam Reminder</a>
+
+    </section>
+
+
+    <main>
+
+
+        <!-- Campus Map Section -->
+        <section class="map-section" id="campus-map">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="small-heading orange-text">
+                        FIND YOUR WAY
+                    </p>
+
+                    <h2>Explore LPU Campus Map</h2>
+
+                    <p>
+                        Looking for a place on campus?
+
+                        Search below and find it easily.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Lovely+Professional+University+Phagwara+Punjab+India"
+                    target="_blank"
+                    rel="noopener"
+                    class="outline-button"
+                    id="openFullMap">
+
+                    Open Full Map ↗
+
+                </a>
+
+            </div>
+
+
+            <!-- Map Search Box -->
+            <form class="map-search" id="mapSearchForm">
+
+                <input
+                    type="text"
+                    id="mapSearchInput"
+                    placeholder="Where do you want to go?"
+                >
+
+                <button type="submit">
+                    Find Location
+                </button>
+
+            </form>
+
+
+            <p id="mapStatus">
+
+                Showing Lovely Professional University, Phagwara.
+
+            </p>
+
+
+            <!-- Map Layout -->
+            <div class="map-layout">
+
+
+                <!-- Google Map -->
+                <div class="map-frame">
+
+                    <iframe
+                        id="campusMap"
+                        title="LPU Campus Map"
+                        src="https://www.google.com/maps?q=Lovely%20Professional%20University%2C%20Phagwara%2C%20Punjab%2C%20India&output=embed"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+
+
+                <!-- Popular Campus Places -->
+                <div class="map-places">
+
+                    <h3>Popular Places</h3>
+
+                    <p>
+                        Choose a place to search it on the map.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="map-place"
+                        data-place="Central Library, Lovely Professional University, Phagwara">
+
+                        📚 Central Library
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="map-place"
+                        data-place="Academic Blocks, Lovely Professional University, Phagwara">
+
+                        🏢 Academic Blocks
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="map-place"
+                        data-place="Medical Centre, Lovely Professional University, Phagwara">
+
+                        ✚ Medical Centre
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="map-place"
+                        data-place="Hostels, Lovely Professional University, Phagwara">
+
+                        🏠 Hostels
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="map-place"
+                        data-place="Sports Complex, Lovely Professional University, Phagwara">
+
+                        ⚽ Sports Complex
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="map-place"
+                        data-place="Food Court, Lovely Professional University, Phagwara">
+
+                        🍽️ Food Court
+
+                    </button>
+
+
+                    <p class="note">
+
+                        Note: Exact indoor routes may not be
+                        available on Google Maps.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+        <!-- Campus Introduction -->
+        <section class="campus-info-section">
+
+            <div>
+
+                <p class="small-heading orange-text">
+                    EXPLORE YOUR CAMPUS
+                </p>
+
+                <h2>Everything You Need, In One Place!</h2>
+
+                <p>
+
+                    College life becomes easier when you know
+                    where everything is.
+
+                    Our Campus Assistant helps you discover
+                    important locations and facilities around LPU.
+
+                </p>
+
+
+                <ul>
+
+                    <li>Find important campus locations.</li>
+
+                    <li>Explore student facilities.</li>
+
+                    <li>Search places without wasting time.</li>
+
+                    <li>Stay updated about upcoming exams.</li>
+
+                </ul>
+
+            </div>
+
+
+            <img
+                src="campus image.jpg"
+                alt="Lovely Professional University Campus">
+
+        </section>
+
+
+
+        <!-- Campus Directory -->
+        <section class="locations-section" id="locations">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="small-heading orange-text">
+                        CAMPUS DIRECTORY
+                    </p>
+
+                    <h2>Explore Popular Locations</h2>
+
+                    <p>
+                        Here are some places that students
+                        often need during their campus life.
+                    </p>
+
+                </div>
+
+                <p id="resultCount">6 locations</p>
+
+            </div>
+
+
+            <div class="location-grid" id="locationGrid">
+
+
+                <!-- Library -->
+                <div
+                    class="location-card"
+                    data-place-name="central library books reading study">
+
+                    <div class="place-icon">📚</div>
+
+                    <h3>Central Library</h3>
+
+                    <p>
+                        Need a quiet place to study?
+
+                        Find books and reading spaces here.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="view-map"
+                        data-place="Central Library, Lovely Professional University, Phagwara">
+
+                        View on Map →
+
+                    </button>
+
+                </div>
+
+
+                <!-- Academic Blocks -->
+                <div
+                    class="location-card"
+                    data-place-name="academic blocks classrooms departments">
+
+                    <div class="place-icon">🏢</div>
+
+                    <h3>Academic Blocks</h3>
+
+                    <p>
+                        Find classrooms, departments
+                        and academic buildings.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="view-map"
+                        data-place="Academic Blocks, Lovely Professional University, Phagwara">
+
+                        View on Map →
+
+                    </button>
+
+                </div>
+
+
+                <!-- Medical Centre -->
+                <div
+                    class="location-card"
+                    data-place-name="medical centre doctor health clinic">
+
+                    <div class="place-icon">✚</div>
+
+                    <h3>Medical Centre</h3>
+
+                    <p>
+                        Find medical assistance
+                        when you need it.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="view-map"
+                        data-place="Medical Centre, Lovely Professional University, Phagwara">
+
+                        View on Map →
+
+                    </button>
+
+                </div>
+
+
+                <!-- Hostels -->
+                <div
+                    class="location-card"
+                    data-place-name="hostels accommodation rooms residence">
+
+                    <div class="place-icon">🏠</div>
+
+                    <h3>Hostels</h3>
+
+                    <p>
+                        Explore student accommodation
+                        and hostel facilities.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="view-map"
+                        data-place="Hostels, Lovely Professional University, Phagwara">
+
+                        View on Map →
+
+                    </button>
+
+                </div>
+
+
+                <!-- Sports Complex -->
+                <div
+                    class="location-card"
+                    data-place-name="sports complex playground gym football">
+
+                    <div class="place-icon">⚽</div>
+
+                    <h3>Sports Complex</h3>
+
+                    <p>
+                        Find places for sports,
+                        games and recreation.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="view-map"
+                        data-place="Sports Complex, Lovely Professional University, Phagwara">
+
+                        View on Map →
+
+                    </button>
+
+                </div>
+
+
+                <!-- Food Court -->
+                <div
+                    class="location-card"
+                    data-place-name="food dining court restaurant canteen">
+
+                    <div class="place-icon">🍽️</div>
+
+                    <h3>Food & Dining</h3>
+
+                    <p>
+                        Feeling hungry?
+
+                        Explore food outlets and dining areas.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="view-map"
+                        data-place="Food Court, Lovely Professional University, Phagwara">
+
+                        View on Map →
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+            <p id="noResults" class="no-results" style="display: none;">
+
+                Sorry! No matching location found.
+
+                Try searching with another name.
+
+            </p>
+
+        </section>
+
+
+<!-- IMPORTANT CONTACTS SECTION -->
+
+<section class="contacts-section" id="important-contacts">
+
+    <div class="section-title">
+
+        <div>
+
+            <p class="small-heading orange-text">
+                HERE TO HELP
+            </p>
+
+            <h2>Important Contacts</h2>
+
+            <p>
+                Need some help? Here are a few useful
+                university contacts that may help you.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <!-- General Enquiry -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">☎️</div>
+
+            <h3>University General Enquiry</h3>
+
+            <p>
+                For general university information
+                and assistance.
+            </p>
+
+            <p class="contact-detail">
+                01824-517000
+            </p>
+
+            <p class="contact-detail">
+                01824-404404
+            </p>
+
+            <a href="tel:+911824517000"
+               class="contact-button">
+
+                Call Now →
+
+            </a>
+
+            <a href="mailto:info@lpu.co.in"
+               class="email-link">
+
+                info@lpu.co.in
+
+            </a>
+
+        </div>
+
+
+        <!-- Medical Help -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">✚</div>
+
+            <h3>Medical Emergency</h3>
+
+            <p>
+                For medical assistance and
+                emergency support at LPU.
+            </p>
+
+            <p class="contact-detail">
+                24-Hour Helpline:
+            </p>
+
+            <p class="contact-detail">
+                01824-501227
+            </p>
+
+            <p class="contact-small">
+                Hospital Reception: 01824-444079
+            </p>
+
+            <a href="tel:+911824501227"
+               class="contact-button">
+
+                Call Medical Help →
+
+            </a>
+
+        </div>
+
+
+        <!-- Student Welfare -->
+
+        <div class="contact-card">
+
+            <div class="contact-icon">🎓</div>
+
+            <h3>Student Welfare</h3>
+
+            <p>
+                For student welfare enquiries
+                and related assistance.
+            </p>
+
+            <p class="contact-detail">
+                01824-444500
+            </p>
+
+            <p class="contact-small">
+                Division of Student Welfare
+            </p>
+
+            <a href="tel:+911824444500"
+               class="contact-button">
+
+                Call Now →
+
+            </a>
+
+            <a href="mailto:director.dcs@lpu.co.in"
+               class="email-link">
+
+                Send Email
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <p class="contact-note">
+        Please use the appropriate official contact
+        for your enquiry. In an emergency, contact
+        the university's medical help directly.
+    </p>
+
+</section>
+
+
+<!-- END IMPORTANT CONTACTS -->
+
+
+<!-- EVENTS AND NOTICE BOARD -->
+
+<section class="events-notices-section" id="events-notices">
+
+    <div class="section-title">
+
+        <div>
+
+            <p class="small-heading orange-text">
+                STAY UPDATED
+            </p>
+
+            <h2>Events & Notice Board</h2>
+
+            <p>
+                Stay connected with campus news,
+                important announcements and upcoming activities.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice-grid">
+
+
+        <!-- Academic Notices -->
+
+        <div class="notice-card">
+
+            <div class="notice-icon">📢</div>
+
+            <span class="notice-label">
+                ACADEMIC NOTICE
+            </span>
+
+            <h3>Important Academic Updates</h3>
+
+            <p>
+                Keep checking official university
+                announcements for examination information,
+                academic updates and important instructions.
+            </p>
+
+            <span class="notice-footer">
+                Stay Informed
+            </span>
+
+        </div>
+
+
+        <!-- Campus Events -->
+
+        <div class="notice-card">
+
+            <div class="notice-icon">🎉</div>
+
+            <span class="notice-label">
+                CAMPUS EVENTS
+            </span>
+
+            <h3>What's Happening at LPU?</h3>
+
+            <p>
+                Explore campus activities, cultural events,
+                workshops and student programmes.
+            </p>
+
+            <a
+                href="https://www.lpu.in/campus-life/campus-events.php/"
+                target="_blank"
+                rel="noopener"
+                class="notice-link">
+
+                Explore Events →
+
+            </a>
+
+        </div>
+
+
+        <!-- Latest LPU Updates -->
+
+        <div class="notice-card">
+
+            <div class="notice-icon">📰</div>
+
+            <span class="notice-label">
+                LPU UPDATES
+            </span>
+
+            <h3>Latest University News</h3>
+
+            <p>
+                Read university news, achievements,
+                announcements and other campus updates.
+            </p>
+
+            <a
+                href="https://happenings.lpu.in/"
+                target="_blank"
+                rel="noopener"
+                class="notice-link">
+
+                Read Latest Updates →
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <p class="notice-note">
+        For the latest official announcements,
+        always check the university's published updates.
+    </p>
+
+</section>
+
+<!-- END EVENTS AND NOTICE BOARD -->
+
+
+
+
+
+
+        <!-- Exam Reminder Section -->
+        <section class="exam-section" id="exam-reminder">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="small-heading orange-text">
+                        STAY PREPARED
+                    </p>
+
+                    <h2>Never Miss Your Exams!</h2>
+
+                    <p>
+
+                        Exams can get stressful.
+
+                        Add your exam dates here and
+                        we will remind you when one is coming up.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Add Exam Form -->
+            <form class="exam-form" id="examForm">
+
+
+                <div>
+
+                    <label for="examName">
+                        Exam Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="examName"
+                        placeholder="Example: CA1 Computer Science"
+                        required>
+
+                </div>
+
+
+                <div>
+
+                    <label for="examDate">
+                        Exam Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="examDate"
+                        required>
+
+                </div>
+
+
+                <button type="submit">
+                    + Add Exam
+                </button>
+
+
+            </form>
+
+
+            <!-- Saved Exam List -->
+            <div class="exam-list-area">
+
+                <h3>Your Upcoming Exams</h3>
+
+                <div id="examList">
+
+                    <p>No exams added yet.</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Browser Notification -->
+            <button
+                type="button"
+                id="notificationButton"
+                class="outline-button">
+
+                🔔 Enable Notifications
+
+            </button>
+
+
+            <p id="notificationStatus" class="note">
+
+                Allow browser notifications to receive
+                reminders while the website is open.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- About Section -->
+        <section class="help-section" id="about">
+
+            <h2>Need a Little Help?</h2>
+
+            <p>
+
+                We know that finding places on a big campus
+                can sometimes be confusing.
+
+                That's why we created this Campus Assistant
+                to make your student life a little easier.
+
+            </p>
+
+            <p>
+                Explore, find your way and enjoy your LPU journey!
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Website Footer -->
+    <footer>
+
+        <h2>LPU Student Campus Assistant</h2>
+
+        <p>
+            Making campus life easier, one search at a time.
+        </p>
+
+        <p>
+            Made for LPU Students ❤️
+        </p>
+
+    </footer>
+
+
+    <script src="auth.js"></script>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
